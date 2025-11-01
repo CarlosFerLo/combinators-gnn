@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "combinators-gnn"
+version = "0.1.0"
+description = ""
+authors = ["Carlos Fernandez <carlos.ferlo@outlook.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+# Optional / suggested dependencies used by the project. These are not
+# required for importing the skeletons but useful for real usage.
+implicational-logic-graph = {version = "^0.1", optional = true}
+# Example ML backend - leave optional so the project can stay lightweight.
+torch = {version = "^2.0", optional = true}
+
+[tool.poetry.extras]
+# To enable graph engine features that depend on the base graph package:
+graph = ["implicational-logic-graph"]
+# To enable tgit raining with PyTorch:
+ml = ["torch"]
+
+[tool.poetry.dev-dependencies]
+pytest = "^8.4.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
