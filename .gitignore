@@ -74,9 +74,6 @@ ipython_config.py
 # pipenv
 Pipfile.lock
 
-# poetry
-poetry.lock
-
 # virtualenv
 venv/
 .venv/
