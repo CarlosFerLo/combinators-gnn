@@ -1,5 +1,7 @@
 import implica as imp
 
+from combinators_gnn.graph_engine import GenerationStrategy
+
 
 class TestGraphEngine:
     def test_engine_adds_start_and_end_nodes(self, var_A, var_B, engine_factory):
@@ -78,3 +80,19 @@ class TestGraphEngine:
 
         # At minimum 5 nodes (start, end, A, B, C) but depending on structure
         assert engine.graph.node_count() >= 5
+
+    def test_engine_stores_generation_strategy(self, var_A, var_B, engine_factory):
+        A = var_A
+        B = var_B
+
+        start = imp.app(A, B)
+        end = B
+
+        strategy = GenerationStrategy()
+        engine = engine_factory(start, end)
+
+        # engine_factory passes a GenerationStrategy by default; ensure attribute exists
+        assert hasattr(engine, "generation_strategy")
+        assert engine.generation_strategy is not None
+        # ensure type is GenerationStrategy (or subclass)
+        assert isinstance(engine.generation_strategy, GenerationStrategy)

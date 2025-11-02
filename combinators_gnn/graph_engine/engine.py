@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Set, List
 
 import implica as imp
+from .strategy import GenerationStrategy
 
 
 class GraphEngine:
@@ -21,9 +22,17 @@ class GraphEngine:
         variable_nodes: Mapping from variable uid to Node for all discovered variables
     """
 
-    def __init__(self, start: imp.BaseType, end: imp.BaseType):
+    def __init__(
+        self,
+        start: imp.BaseType,
+        end: imp.BaseType,
+        generation_strategy: GenerationStrategy,
+    ):
         self.start_type = start
         self.end_type = end
+
+        # Save the generation strategy (may be extended later)
+        self.generation_strategy = generation_strategy
 
         # Create a fresh graph
         self.graph = imp.Graph()

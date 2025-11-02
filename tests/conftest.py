@@ -1,6 +1,7 @@
 import pytest
 import implica as imp
 from combinators_gnn.graph_engine.engine import GraphEngine
+from combinators_gnn.graph_engine.strategy import GenerationStrategy
 
 
 @pytest.fixture(scope="module")
@@ -27,6 +28,7 @@ def engine_factory():
     """
 
     def _factory(start, end):
-        return GraphEngine(start, end)
+        # Pass a default GenerationStrategy instance until the class is extended
+        return GraphEngine(start, end, GenerationStrategy())
 
     return _factory
