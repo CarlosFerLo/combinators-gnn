@@ -90,14 +90,14 @@ test-full = ["adlfs", "aiohttp (!=4.0.0a0,!=4.0.0a1)", "cloudpickle", "dask", "d
 tqdm = ["tqdm"]
 
 [[package]]
-name = "implicational-logic-graph"
-version = "0.2.0"
+name = "implica"
+version = "0.3.4"
 description = "A package for working with graphs representing minimal implicational logic models"
 optional = false
 python-versions = "<4.0,>=3.10"
 files = [
-    {file = "implicational_logic_graph-0.2.0-py3-none-any.whl", hash = "sha256:31ea666d9f1926fda0ab6dd7a8697de96561aedcf4a017959ec9fbfd43fa7061"},
-    {file = "implicational_logic_graph-0.2.0.tar.gz", hash = "sha256:2e56f68f605cb0111bafab12cffb2e58326a18e208bdee892a0a006a1192c8af"},
+    {file = "implica-0.3.4-py3-none-any.whl", hash = "sha256:93e65efddf7ee6f37c2abbc902d224197a47992a57fcdc140fac5811e1523e86"},
+    {file = "implica-0.3.4.tar.gz", hash = "sha256:60274885af7da5c5331cda3d3f5b06cf970f781a192629f66e80b04c56547724"},
 ]
 
 [package.dependencies]
@@ -880,4 +880,4 @@ typing-extensions = ">=4.12.0"
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<3.15"
-content-hash = "697656f1a8a11453156763dd9e5022904d4521eec7c1aae3c5be5369e09c828e"
+content-hash = "7ba99af11b01fbe20623a3e21826680b79217d7ab3d566b1f59b06cdf35eeccd"
